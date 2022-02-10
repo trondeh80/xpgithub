@@ -1,0 +1,13 @@
+name: Enonic CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build, Test and Deploy app
+        uses: docker://enonic/enonic-ci:7.2
+        with:
+          args: bash -c "enonic project build"
