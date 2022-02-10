@@ -10,5 +10,5 @@ jobs:
       - name: Build, Test and Deploy app
         uses: docker://enonic/enonic-ci:7.2
         with:
-          key: ${{ runner.os }}-foo-${{ hashFiles(...) }}
+          key: ${{ runner.os }}-v1
           args: bash -c "enonic project build"
